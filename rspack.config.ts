@@ -17,6 +17,7 @@ export default defineConfig({
 		extensions: ["...", ".ts", ".tsx", ".jsx"]
 	},
 	output:{
+		path: __dirname + "/dist",
 		publicPath: "/",
 		clean: true,
 	},
