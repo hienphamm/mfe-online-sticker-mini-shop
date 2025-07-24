@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const VueWrapper = () => {
+const ProductWrapper = () => {
     const ref = useRef(null);
 
     useEffect(() => {
@@ -11,4 +11,4 @@ const VueWrapper = () => {
     return <hello-world msg="Hello from React" ref={ref} />;
 };
 
-export default VueWrapper;
+export default ProductWrapper;

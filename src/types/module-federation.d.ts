@@ -1,7 +1,4 @@
-declare module 'order/Button' {
-    const Button: React.ComponentType<any>;
-    export default Button;
-}
+declare module 'order/OrderApp'
 
 declare module 'product/HelloWorld' {
     const HelloWorld: React.ComponentType<any>;
