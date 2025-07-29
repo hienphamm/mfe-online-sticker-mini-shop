@@ -8,12 +8,15 @@ importers:
 
   .:
     dependencies:
+      lucide-react:
+        specifier: ^0.533.0
+        version: 0.533.0(react@19.1.0)
       mfe-ui-kit:
-        specifier: 0.0.5
-        version: 0.0.5
+        specifier: 0.0.11
+        version: 0.0.11
       mfe-ui-kit-react:
-        specifier: 0.0.5
-        version: 0.0.5(mfe-ui-kit@0.0.5)(react@19.1.0)
+        specifier: 0.0.11
+        version: 0.0.11(mfe-ui-kit@0.0.11)(react@19.1.0)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -1589,6 +1592,11 @@ packages:
   long-timeout@0.1.1:
     resolution: {integrity: sha512-BFRuQUqc7x2NWxfJBCyUrN8iYUYznzL9JROmRz1gZ6KlOIgmoD+njPVbb+VNn2nGMKggMsK79iUNErillsrx7w==}
 
+  lucide-react@0.533.0:
+    resolution: {integrity: sha512-XwRo6CQowPRe1cfBJITmHytjR3XS4AZpV6rrBFEzoghARgyU2RK3yNRSnRkSFFSQJWFdQ8f4Wk1awgLLSy1NCQ==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   luxon@3.7.1:
     resolution: {integrity: sha512-RkRWjA926cTvz5rAb1BqyWkKbbjzCGchDUIKMCUvNi17j6f6j8uHGDV82Aqcqtzd+icoYpELmG3ksgGiFNNcNg==}
     engines: {node: '>=12'}
@@ -1622,14 +1630,14 @@ packages:
     resolution: {integrity: sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==}
     engines: {node: '>= 0.6'}
 
-  mfe-ui-kit-react@0.0.5:
-    resolution: {integrity: sha512-d7NxhEVrhawi9xOtJNuCaKOCjgQlsEMj/qonTg/U9bt2KWaLwHp/JCtgNX7LSK2OfEKGSkVNN6QLJxP4/e2ugQ==}
+  mfe-ui-kit-react@0.0.11:
+    resolution: {integrity: sha512-UyAu1e53t2C5/zC67bO5+7mGC7y5Q/CWMLCU40awbNZ/HDYyGgpV+im981sogSSfppwU6F0BUAEpy/hy4GVsMQ==}
     peerDependencies:
       mfe-ui-kit: workspace:*
       react: ^18.0.0
 
-  mfe-ui-kit@0.0.5:
-    resolution: {integrity: sha512-6P4tHKog6Zb/S0/yDxMv49HueDr4U+ZHhhqQLFsMVk3t1DDeIO6RwIG88TvMARcr/vbbotp9Ax96G3n+txmlKA==}
+  mfe-ui-kit@0.0.11:
+    resolution: {integrity: sha512-JzWMt8dwO/giaI4Yx+0N3HFO+biYCzE71tmiiSGSt5Vbqra0bhrtrRRO3oqzDfcXCpLDEsGscKMHfeMdHJo+fQ==}
 
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
@@ -3842,6 +3850,10 @@ snapshots:
 
   long-timeout@0.1.1: {}
 
+  lucide-react@0.533.0(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+
   luxon@3.7.1: {}
 
   magic-string@0.30.17:
@@ -3867,12 +3879,12 @@ snapshots:
 
   methods@1.1.2: {}
 
-  mfe-ui-kit-react@0.0.5(mfe-ui-kit@0.0.5)(react@19.1.0):
+  mfe-ui-kit-react@0.0.11(mfe-ui-kit@0.0.11)(react@19.1.0):
     dependencies:
-      mfe-ui-kit: 0.0.5
+      mfe-ui-kit: 0.0.11
       react: 19.1.0
 
-  mfe-ui-kit@0.0.5: {}
+  mfe-ui-kit@0.0.11: {}
 
   micromatch@4.0.8:
     dependencies:

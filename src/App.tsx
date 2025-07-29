@@ -1,26 +1,38 @@
 import React from 'react';
-import ProductWrapper from './wrappers/ProductWrapper.tsx';
-import { defineCustomElements } from 'mfe-ui-kit/loader';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import OrderWrapper from './wrappers/OrderWrapper.tsx';
-import Shell from './wrappers/Shell.tsx';
+import {defineCustomElements} from 'mfe-ui-kit/loader';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './styles.css';
+import Shell from "./wrappers/Shell.tsx";
+import ProductWrapper from "./wrappers/ProductWrapper.tsx";
+import Hero from "./components/Hero.tsx";
 
 defineCustomElements();
 
+const OrderWrapperLazy = React.lazy(() => import('./wrappers/OrderWrapper.tsx'));
+
 function App() {
-  return (
-    <React.Suspense fallback={<div>Loading...</div>}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Shell />} />
-          <Route path="/order" element={<OrderWrapper />} />
-          <Route path="/product/:id" element={<ProductWrapper />} />
-          <Route path="*" element={<div>404 not found</div>} />
-        </Routes>
-      </BrowserRouter>
-    </React.Suspense>
-  );
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Shell/>}>
+                        <Route index element={
+                            <div>
+                                <Hero/>
+                                <ProductWrapper/>
+                            </div>
+                        }/>
+                        <Route path="new" element={<ProductWrapper/>}/>
+                        <Route path="best" element={<ProductWrapper/>}/>
+                        <Route path="product" element={<ProductWrapper/>}/>
+                        <Route path="product/:id" element={<ProductWrapper/>}/>
+                        <Route path="cart" element={<OrderWrapperLazy/>}/>
+                        <Route path="*" element={<div>404 not found</div>}/>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </React.Suspense>
+    );
 }
 
 export default App;
