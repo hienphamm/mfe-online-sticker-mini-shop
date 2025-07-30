@@ -4,7 +4,6 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './styles.css';
 import Shell from "./wrappers/Shell.tsx";
 import ProductWrapper from "./wrappers/ProductWrapper.tsx";
-import Hero from "./components/Hero.tsx";
 
 defineCustomElements();
 
@@ -16,12 +15,7 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Shell/>}>
-                        <Route index element={
-                            <div>
-                                <Hero/>
-                                <ProductWrapper/>
-                            </div>
-                        }/>
+                        <Route index element={<ProductWrapper/>}/>
                         <Route path="new" element={<ProductWrapper/>}/>
                         <Route path="best" element={<ProductWrapper/>}/>
                         <Route path="product" element={<ProductWrapper/>}/>

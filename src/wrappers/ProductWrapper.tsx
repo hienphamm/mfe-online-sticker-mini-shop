@@ -2,26 +2,41 @@ import {useEffect, useRef, useState} from 'react';
 import ErrorBoundaryFallback from '../components/ErrorBoundaryFallback';
 
 const ProductWrapper = () => {
-    const ref = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
+        let unmount: (() => void) | undefined;
         const load = async () => {
             try {
-                await import('product/HelloWorld');
+                const {mount} = await import('product/App');
+                if (typeof mount === 'function' && containerRef.current) {
+                    unmount = mount(containerRef.current, {
+                        currentPath: location.pathname
+                    });
+                } else {
+                    throw new Error('mount function not found');
+                }
             } catch (err) {
+                console.error('Error loading Vue MFE:', err);
                 setHasError(true);
             }
         };
+
         load();
+
+        return () => {
+            if (unmount) {
+                unmount();
+            }
+        };
     }, []);
 
     if (hasError) {
         return <ErrorBoundaryFallback/>;
     }
 
-    // @ts-ignore
-    return <hello-world msg="Hello from Shell" ref={ref}/>;
+    return <div ref={containerRef}/>;
 };
 
 export default ProductWrapper;

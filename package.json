@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "lucide-react": "^0.533.0",
-    "mfe-ui-kit": "0.0.11",
-    "mfe-ui-kit-react": "0.0.11",
+    "mfe-ui-kit": "0.0.12",
+    "mfe-ui-kit-react": "0.0.12",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^6.30.1"
