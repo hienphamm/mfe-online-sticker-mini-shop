@@ -1,6 +1,22 @@
 import {Link} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {initSharedState} from "../store";
 
 export default function Header() {
+    const [cartCount, setCartCount] = useState(0);
+
+    useEffect(() => {
+        let sub: any;
+        (async () => {
+            const {cartState$} = await initSharedState();
+            sub = cartState$.subscribe((state: any) => {
+                setCartCount(state.cart.length);
+            });
+        })();
+
+        return () => sub?.unsubscribe?.();
+    }, []);
+
     return (
         <header
             className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -37,7 +53,7 @@ export default function Header() {
                         </div>
 
                         <Link to="/cart" className="text-sm font-medium hover:text-primary transition-colors">
-                            Cart
+                            Cart {cartCount}
                         </Link>
                     </div>
                 </div>
