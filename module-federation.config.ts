@@ -7,7 +7,7 @@ export default createModuleFederationConfig({
     remotes: {
         order: `order@${isProd ? 'https://mfe-angular-order.vercel.app' : 'http://localhost:4200'}/remoteEntry.js`,
         product: `product@${isProd ? 'https://mfe-vue-product.vercel.app' : 'http://localhost:8082'}/mf-manifest.json`,
-        global_store: `global_store@${isProd ? 'https://mfe-vue-global-store.vercel.app' : 'http://localhost:3000'}/mf-manifest.json`,
+        global_store: `global_store@${isProd ? 'https://mfe-global-store.vercel.app' : 'http://localhost:3000'}/mf-manifest.json`,
     },
     exposes: {},
     shared: {
